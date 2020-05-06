@@ -4,10 +4,14 @@ count='ps -ef | grep -w tomcat | grep -v "grep" | wc -1'
 if [$count -le 0]; then
         echo "tomcat is not run"
         cd $TOMCAT_DIR
+        ls -l
         ./startup.sh
+        echo "Tomcat 启动成功"
 else
         echo "tomcat is run"
         cd $TOMCAT_DIR
+        ls -l
         ./shutdown.sh
         ./startup.sh
+        echo "Tomcat 启动成功"
 fi
