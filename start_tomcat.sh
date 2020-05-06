@@ -5,13 +5,13 @@ if [$count -le 0]; then
         echo "tomcat is not run"
         cd $TOMCAT_DIR
         ls -l
-        ./startup.sh
+        sudo ./startup.sh
         echo "Tomcat 启动成功"
 else
         echo "tomcat is run"
         cd $TOMCAT_DIR
         ls -l
-        ./shutdown.sh
-        ./startup.sh
+        sudo ./shutdown.sh
+        sudo ./startup.sh
         echo "Tomcat 启动成功"
 fi
